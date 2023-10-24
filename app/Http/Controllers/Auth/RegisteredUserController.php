@@ -61,7 +61,7 @@ public function store(Request $request)
         'name' => $request->name,
         'email' => $request->email,
         'password' => Hash::make($request->password),
-        
+        'role_id'=>1,
     ]);
 
 
