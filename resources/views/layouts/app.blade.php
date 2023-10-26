@@ -29,7 +29,8 @@
 
             <!-- Page Content -->
             <main>
-            @yield('content')
+                @include('partials.flash')
+                @yield('content')
             </main>
         </div>
     </body>
