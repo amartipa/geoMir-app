@@ -35,6 +35,7 @@ Route::get('/dashboard', function () {
 
 
 Route::middleware('auth')->group(function () {
+    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -44,6 +45,6 @@ Route::get('mail/test', [MailController::class, 'test']);
 // or
 // Route::get('mail/test', 'App\Http\Controllers\MailController@test');
 
-Route::resource('files', FileController::class);
+Route::resource('files', FileController::class)->middleware(['auth', 'role.any:2,3']);
 
 require __DIR__.'/auth.php';

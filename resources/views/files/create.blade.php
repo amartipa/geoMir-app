@@ -1,6 +1,8 @@
+
 <script src="https://cdn.tailwindcss.com"></script>
 <form method="post" action="{{ route('files.store') }}" enctype="multipart/form-data" class="bg-white p-8 rounded shadow-md">
     @csrf
+    
     <div class="mb-4">
         <label for="upload" class="block text-gray-700 text-sm font-bold mb-2">File:</label>
         <input type="file" name="upload" class="form-input w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
