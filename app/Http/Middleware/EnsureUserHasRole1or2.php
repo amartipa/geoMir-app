@@ -13,15 +13,15 @@ class EnsureUserHasRole1or2
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, ...$roles)
     {
-        $user = $request->user();
-        
-        // Verifica si el usuario tiene role_id igual a 1 o 2
-        if ($user && in_array($user->role_id, [1, 2])) {
-            return $next($request);
-        }
-
-        $url = $request->url();
-        return redirect('/')->with('error', "Access denied to {$url}");
-    }}
+    \Log::debug($roles);
+    // Check if the user has at least one of the allowed roles (1 or 2)
+    if (!in_array($request->user()->role_id, $roles)) {
+    $url = $request->url();
+    return redirect('dashboard')->with('error', "Access denied to {$url}");
+    }
+    
+    return $next($request);
+    }
+}

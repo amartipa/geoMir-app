@@ -63,6 +63,7 @@ class FileController extends Controller
             $file = File::create([
                 'filepath' => $filePath,
                 'filesize' => $fileSize,
+                
             ]);
             Log::debug("DB storage OK");
             // Patró PRG amb missatge d'èxit

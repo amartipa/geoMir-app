@@ -21,6 +21,7 @@
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Filesize</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Updated</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">View</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Delete</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Edit</td>
                           </tr>
@@ -33,6 +34,7 @@
                               <td class="px-6 py-4 whitespace-nowrap">{{ $file->filesize }}</td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $file->created_at }}</td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $file->updated_at }}</td>
+                              <td class="px-6 py-4 whitespace-nowrap"><a href="{{ route('files.show', ['file' => $file->id]) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Ver</a></td>
                               <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('files.destroy', ['file' => $file->id]) }}" method="post">
                               @csrf
                               @method('DELETE')
