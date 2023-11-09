@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\PlaceController;
+
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Log;
 
@@ -47,6 +49,7 @@ Route::get('mail/test', [MailController::class, 'test']);
 // Route::get('mail/test', 'App\Http\Controllers\MailController@test');
 
 Route::resource('files', FileController::class)->middleware(['auth', 'role.any:2,3']);
+Route::resource('places', PlaceController::class);
 Route::resource('posts', PostController::class)->middleware(['auth', 'role.any:2,3']);
 
 require __DIR__.'/auth.php';

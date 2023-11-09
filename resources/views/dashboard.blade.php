@@ -21,6 +21,9 @@
                     <br><br>
                     <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href="{{ url('/files/create') }}">{{ __('Create files') }}</a>
                     <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href="{{ url('/posts') }}">{{ __('Posts') }}</a>
+                    <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href="{{ url('/files/create') }}">{{ __('Create') }}</a>
+                    <br><br>
+                    <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href="{{ url('/places') }}">{{ __('Place') }}</a>
             </div>
         </div>
     </div>
