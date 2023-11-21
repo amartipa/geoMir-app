@@ -21,6 +21,7 @@
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">file</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Longitude</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Latitude</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Like</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Created</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Delete</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Edit</td>
@@ -34,6 +35,7 @@
                               <td class="px-6 py-4 whitespace-nowrap"><img class="img-fluid" src='{{ asset("storage/{$post->file->filepath}") }}' /></td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $post->latitude }}</td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $post->longitude }}</td>
+                              <td class="px-6 py-4 whitespace-nowrap">{{ $post->liked_count }}</td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $post->created_at }}</td>
                               <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="post">
                               @csrf

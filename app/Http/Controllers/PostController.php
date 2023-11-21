@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\File;
+use App\Models\Like;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
@@ -19,14 +20,39 @@ class PostController extends Controller
             $searchTerm = $request->input('search');
    
             // Realizar la búsqueda en la base de datos
-            $posts = Post::where('body', 'like', "%$searchTerm%")->paginate(5);
-   
+            foreach ($posts as $post){
+                $isLiked =Like::where('user_id',auth()->user()->id)
+                ->where('post_id', $post->id )
+                ->first();
+                if ($isLiked){
+                    $post->isLiked = True;
+                }else{
+                    $post->isLiked = False;
+                }
+            };
+
             return view('posts.index', compact('posts'));
         } else {
-            $posts= Post::orderBy('id','desc')->paginate(5);
-        
+            $posts = Post::withCount('liked')
+            ->orderBy('id', 'desc')
+            ->paginate(5);
+            
+            foreach ($posts as $post){
+                $isLiked =Like::where('user_id',auth()->user()->id)
+                ->where('post_id', $post->id )
+                ->first();
+                if ($isLiked){
+                    $post->isLiked = True;
+                }else{
+                    $post->isLiked = False;
+                }
+
+            }
+           
+
             return view("posts.index", [
-                "posts" => $posts]);
+                "posts" => $posts
+            ]);
         }
         }
 
@@ -106,13 +132,29 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
+    // public function show(Post $post)
+    // {
+    //     if (Storage::disk('public')->exists($post->file->filepath)) {
+    //         return view("posts.show", [
+    //             "post" => $post
+    //         ]);
+    //     } else {
+    //         return redirect()->route("posts.index")
+    //             ->with('error', 'ERROR: El post no existe');
+    //     };   
+    // }
     public function show(Post $post)
     {
+        // Primero, verificar si el archivo asociado al post existe
         if (Storage::disk('public')->exists($post->file->filepath)) {
+            // Cargar el conteo de 'likes' para el post
+            $post->loadCount('liked');
+
             return view("posts.show", [
                 "post" => $post
             ]);
         } else {
+            // Redirigir si el archivo no existe
             return redirect()->route("posts.index")
                 ->with('error', 'ERROR: El post no existe');
         };   
@@ -142,7 +184,7 @@ class PostController extends Controller
     $upload = $request->file('upload');
     $fileName = $upload->getClientOriginalName();
     $fileSize = $upload->getSize();
-    Log::debug("Storing file '{$fileName}' ($fileSize)...");
+    \Log::debug("Storing file '{$fileName}' ($fileSize)...");
 
     // Pujar fitxer al disc dur
     $uploadName = time() . '_' . $fileName;
@@ -199,4 +241,30 @@ class PostController extends Controller
        
         return redirect()->route("posts.index")->with('success', 'Post eliminado correctamente');
     }
+
+    public function like(Request $request, Post $post)
+    {
+        
+        $like =Like::where('user_id',auth()->user()->id)
+                    ->where('post_id', $post->id )
+                    ->first();
+        if($like){
+            $like->delete();
+            Log::debug("Like eliminado correctamente");
+            return redirect()->route('posts.index');
+           
+
+        }else{
+            $like = Like::create([
+                'user_id' => auth()->user()->id,
+                'post_id' => $post->id,
+            ]);
+            $isLiked=True;
+            Log::debug("Like creado correctamente");
+            return redirect()->route('posts.index');
+            
+        }
+    }
 }
+
+

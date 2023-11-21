@@ -52,6 +52,9 @@ Route::resource('files', FileController::class)->middleware(['auth', 'role.any:2
 Route::resource('places', PlaceController::class)->middleware(['auth', 'role.any:2,3']);
 Route::resource('posts', PostController::class)->middleware(['auth', 'role.any:2,3']);
 
+Route::post('/posts/{post}/like', [PostController::class, 'like'])->name('posts.like');
+
+
 Route::post('/places/{place}/favs', [PlaceController::class, 'favorite'])->name('places.favorite');
 
 require __DIR__.'/auth.php';
