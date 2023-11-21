@@ -19,8 +19,8 @@
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Body</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">file</td>
-                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Longitude</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Latitude</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Longitude</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Like</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">view</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Delete</td>
