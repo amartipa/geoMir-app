@@ -21,6 +21,7 @@
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Latitude</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Longitude</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Favortites</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">File</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Delete</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Edit</td>
@@ -45,6 +46,7 @@
                               <td class="px-6 py-4 whitespace-nowrap">{{ $place->description }}</td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $place->latitude }}</td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $place->longitude }}</td>
+                              <td class="px-6 py-4 whitespace-nowrap">{{ $place->favorited_count }}</td>
                               <td class="px-6 py-4 whitespace-nowrap"><img class="img-fluid" src="{{ asset("storage/{$place->file->filepath}") }}" /></td>
                               <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('places.destroy', ['place' => $place->id]) }}" method="post">
                               @csrf
@@ -55,6 +57,18 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             <a href="{{ route('places.edit', $place) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Editar</a>
                           </tr>
+                        </td>
+                          <!-- Resto de tu código -->
+
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <form action="{{ route('places.favorite', ['place' => $place->id]) }}" method="post">
+                                @csrf
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Agregar a favoritos</button>
+                            </form>
+                        </td>
+
+                            <!-- Resto de tu código -->
+
                           @endforeach
                           {{$places->links()}}
                       </tbody>

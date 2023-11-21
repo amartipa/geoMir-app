@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\File;
 use App\Models\Place;
+use App\Models\Favorite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
+use Auth;
+
 
 class PlaceController extends Controller
 {
@@ -14,34 +17,24 @@ class PlaceController extends Controller
      * Display a listing of the resource.
      */
     public function index(Request $request)
-
     {
-
         if ($request->has('search')) {
-
             $searchTerm = $request->input('search');
-
    
-
             // Realizar la búsqueda en la base de datos
-
-            $places = Place::where('description', 'like', "%$searchTerm%")->paginate(5);
-
-   
-
+            $places = Place::withCount('favorited')
+            ->where('body', 'like', "%$searchTerm%")
+            ->paginate(5);
+           
             return view('places.index', compact('places'));
-
         } else {
-
+            $places = Place::withCount('favorited')
+            ->orderBy('id', 'desc')
+            ->paginate(5);            
             return view("places.index", [
-
-                "places" => Place::paginate(5),
-
-            ]);
-
+                "places" => $places]);
         }
-
-    }
+        }
 
     /**
      * Show the form for creating a new resource.
@@ -117,6 +110,8 @@ class PlaceController extends Controller
     public function show(Place $place)
     {
         //
+        $place->loadCount('favorited');
+
         if (Storage::disk('public')->exists($place->file->filepath)) {
             return view("places.show", [
                 "place" => $place
@@ -201,6 +196,74 @@ class PlaceController extends Controller
         $place->delete();
         $place->file->delete();
         return redirect()->route("places.index")->with('success', 'Place eliminado correctamente');
+    }
+    // public function favorite(Request $request, Place $place)
+    // {
+    //     $user = Auth::user();
+
+    //     if ($user->isFavorited($place)) {
+    //         // Si ya es favorito, quitar de favoritos
+    //         $user->favorites()->detach($place->id);
+    //         return redirect()->back()->with('success', 'Place eliminado de favoritos');
+    //     } else {
+    //         // Si no es favorito, añadir a favoritos
+    //         $user->favorites()->attach($place->id);
+    //         return redirect()->back()->with('success', 'Place añadido a favoritos');
+    //     }
+    // }
+    // public function unfavorite(Request $request, Place $place)
+    // {
+    //     $user = Auth::user();
+
+    //     if ($user->isFavorited($place)) {
+    //         // Si es favorito, quitar de favoritos
+    //         $user->favorites()->detach($place->id);
+    //         return redirect()->back()->with('success', 'Place eliminado de favoritos');
+    //     } else {
+    //         // Si no es favorito, mostrar algún mensaje de error
+    //         return redirect()->back()->with('error', 'Place no está en la lista de favoritos');
+    //     }
+    // }
+    // public function favourite(Place $place){
+    //     if (Favourite::where('user_id',auth()->user()->id)->where('place_id', $place->id )->first()){
+    //         return redirect()->route('places.show', $place)
+    //         ->with('error', __("fpp.place-favourite-error"));
+    //     }else{
+    //         $favourite = Favourite::create([
+    //             'user_id' => auth()->user()->id,
+    //             'place_id' => $place->id,
+    //         ]);
+    //         return redirect()->back()
+    //         ->with('success', __("fpp.place-favourite"));
+    //     }
+    // }
+
+    // public function unfavourite(Place $place){
+    //     if (Favourite::where('user_id',auth()->user()->id)->where('place_id', $place->id )->first()){
+    //         Favourite::where('user_id',auth()->user()->id)
+    //                  ->where('place_id', $place->id )->delete();;
+    //         return redirect()->back()
+    //         ->with('success', __("fpp.place-unfavourite"));
+    //     }else{
+    //         return redirect()->route('places.show', $place)
+    //         ->with('error', __("fpp.place-unfavourite-error"));
+    //     }
+    // }
+    public function favorite (Request $request, Place $place){
+        $favorite = Favorite::where('user_id',auth()->user()->id)->where('place_id', $place->id )->first();
+        if($favorite){
+            $favorite->delete();
+            Log::debug("Fav eliminado");
+            return redirect()->route("places.index");
+        } else {
+            $favorite = Favorite::create([
+                'user_id' => auth()->user()->id,
+                'place_id' => $place->id,
+            ]);
+            return redirect()->back();
+            Log::debug("Fav creat");
+        }
+
     }
 }
 
