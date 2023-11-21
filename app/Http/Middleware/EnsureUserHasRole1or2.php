@@ -15,7 +15,7 @@ class EnsureUserHasRole1or2
      */
     public function handle(Request $request, Closure $next, ...$roles)
     {
-    \Log::debug($roles);
+    
     // Check if the user has at least one of the allowed roles (1 or 2)
     if (!in_array($request->user()->role_id, $roles)) {
     $url = $request->url();

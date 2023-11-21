@@ -4,7 +4,7 @@
         {{ __('Posts') }}
     </h2>
     @endsection
-
+   
    @section("content")
    <div class="py-12">
        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -21,10 +21,10 @@
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">file</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Longitude</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Latitude</td>
-                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Created</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Like</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">view</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Delete</td>
-                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Edit</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Edit</td> 
                           </tr>
                       </thead>
                       <tbody class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -42,7 +42,16 @@
                               <td class="px-6 py-4 whitespace-nowrap"><img class="img-fluid" src='{{ asset("storage/{$post->file->filepath}") }}' /></td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $post->latitude }}</td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $post->longitude }}</td>
-                              <td class="px-6 py-4 whitespace-nowrap">{{ $post->created_at }}</td>
+                              <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('posts.like', ['post' => $post->id]) }}" method="post">
+                                @csrf
+                                @method('POST')
+                                    <p></p>
+                                    @if($post->isLiked)
+                                        <button type="submit"><i class="fa-solid fa-heart" style="color: #ff0000;"></i> {{$post->liked_count}}</button>
+                                    @else
+                                        <button type="submit"> <i class="fa-regular fa-heart"></i> {{$post->liked_count}}</button>
+                                    @endif
+                              </form>                              
                               <td class="px-6 py-4 whitespace-nowrap"><a href="{{ route('posts.show', ['post' => $post->id]) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Ver</a></td>
                               <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="post">
                               @csrf
