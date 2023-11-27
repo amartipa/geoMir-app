@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Livewire;
 use App\Filament\Resources\PostResource\Pages\Log;
+use Filament\Forms\Components\RichEditor;
 
 class PostResource extends Resource
 {
@@ -46,9 +47,26 @@ class PostResource extends Resource
                             ->relationship('author', 'name')
                             ->default(auth()->user()->id)
                             ->disablePlaceholderSelection(),
-                        Forms\Components\TextInput::make('body')
-                            ->required()
-                            ->maxLength(255),
+                        
+                        Forms\Components\RichEditor::make('body')
+                        ->required()
+                        ->maxLength(255)
+                        ->toolbarButtons([
+                            'attachFiles',
+                            'blockquote',
+                            'bold',
+                            'bulletList',
+                            'codeBlock',
+                            'h2',
+                            'h3',
+                            'italic',
+                            'link',
+                            'orderedList',
+                            'redo',
+                            'strike',
+                            'underline',
+                            'undo',
+                        ]),
                         Forms\Components\TextInput::make('latitude')
                             ->required(),
                         Forms\Components\TextInput::make('longitude')
