@@ -20,9 +20,10 @@
                 @can('viewAny',App\Models\File::class)
                         <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href="{{ url('/files') }}">{{ __('Files') }}</a>
                         <br><br>
-                @endcan   
+                @endcan 
+                @can('viewAny',App\Models\Post::class)  
                     <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href="{{ url('/posts') }}">{{ __('Posts') }}</a>
-                    
+                @endcan   
                     <br><br>
                     <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href="{{ url('/places') }}">{{ __('Place') }}</a>
             </div>
