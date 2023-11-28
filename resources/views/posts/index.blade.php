@@ -8,8 +8,10 @@
    @section("content")
    <div class="py-12">
        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-       <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"href="{{ url('/posts/create') }}">{{ __('Create') }}</a>
-       <a href="{{ url('/dashboard') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">{{ __('Dashboard') }}</a>
+        @can('create',App\Models\Post::class)
+            <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"href="{{ url('/posts/create') }}">{{ __('Create') }}</a>
+        @endcan
+            <a href="{{ url('/dashboard') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">{{ __('Dashboard') }}</a>
            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                <div class="p-6 bg-white border-b border-gray-200">
                    
@@ -42,7 +44,8 @@
                               <td class="px-6 py-4 whitespace-nowrap"><img class="img-fluid" src='{{ asset("storage/{$post->file->filepath}") }}' /></td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $post->latitude }}</td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $post->longitude }}</td>
-                              <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('posts.like', ['post' => $post->id]) }}" method="post">
+                              @can('like',$post)
+                                <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('posts.like', ['post' => $post->id]) }}" method="post">
                                 @csrf
                                 @method('POST')
                                     <p></p>
@@ -51,17 +54,24 @@
                                     @else
                                         <button type="submit"> <i class="fa-regular fa-heart"></i> {{$post->liked_count}}</button>
                                     @endif
-                              </form>                              
-                              <td class="px-6 py-4 whitespace-nowrap"><a href="{{ route('posts.show', ['post' => $post->id]) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Ver</a></td>
-                              <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="post">
-                              @csrf
-                              @method('DELETE')
-                              <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"><i class="fas fa-trash"></i></button>
-                            </form>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <a href="{{ route('posts.edit', $post) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Editar</a>
-                          </tr>
+                               </form> 
+                               @endcan
+                              @can('view',$post)                             
+                                <td class="px-6 py-4 whitespace-nowrap"><a href="{{ route('posts.show', ['post' => $post->id]) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Ver</a></td>
+                              @endcan
+                              @can('delete',$post)
+                                <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"><i class="fas fa-trash"></i></button>
+                                </form>
+                                </td>
+                            @endcan
+                            @can('update',$post)
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                <a href="{{ route('posts.edit', $post) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Editar</a>
+                                </tr>
+                            @endcan
                           @endforeach
                           {{$posts->links()}}
                       </tbody>

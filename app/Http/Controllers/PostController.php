@@ -8,9 +8,16 @@ use App\Models\Like;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Http\RedirectResponse;
 
 class PostController extends Controller
 {
+    
+    
+    public function __construct()
+    {
+        $this->authorizeResource(Post::class, 'post');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -156,7 +163,7 @@ class PostController extends Controller
         } else {
             // Redirigir si el archivo no existe
             return redirect()->route("posts.index")
-                ->with('error', 'ERROR: El post no existe');
+                ->with('error', 'ERROR: El post no se puede mostrar');
         };   
     }
 
@@ -242,9 +249,9 @@ class PostController extends Controller
         return redirect()->route("posts.index")->with('success', 'Post eliminado correctamente');
     }
 
-    public function like(Request $request, Post $post)
+    public function like(Request $request, Post $post): RedirectResponse
     {
-        
+        $this->authorize('like', $post);
         $like =Like::where('user_id',auth()->user()->id)
                     ->where('post_id', $post->id )
                     ->first();
