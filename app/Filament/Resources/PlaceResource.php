@@ -40,8 +40,11 @@ class PlaceResource extends Resource
                             return time() . '_' . $file->getClientOriginalName();
                         }),
                     ]),
-                Forms\Components\TextInput::make('author_id')
-                    ->required(),
+                Forms\Components\Select::make('author_id')
+                    ->required()
+                    ->relationship('author', 'name')
+                    ->default(auth()->user()->id)
+                    ->disablePlaceholderSelection(),
                     
                 Forms\Components\TextInput::make('name')
                     ->required()

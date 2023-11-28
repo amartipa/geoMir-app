@@ -13,6 +13,12 @@ class FileController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function __construct()
+    {
+        $this->authorizeResource(File::class,'file');
+    }
+
     public function index()
     {
         return view("files.index", [

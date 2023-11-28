@@ -34,16 +34,22 @@
                               <td class="px-6 py-4 whitespace-nowrap">{{ $file->filesize }}</td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $file->created_at }}</td>
                               <td class="px-6 py-4 whitespace-nowrap">{{ $file->updated_at }}</td>
-                              <td class="px-6 py-4 whitespace-nowrap"><a href="{{ route('files.show', ['file' => $file->id]) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Ver</a></td>
-                              <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('files.destroy', ['file' => $file->id]) }}" method="post">
-                              @csrf
-                              @method('DELETE')
-                              <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"><i class="fas fa-trash"></i></button>
-                            </form>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <a href="{{ route('files.edit', $file) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Editar</a>
-                          </tr>
+                              @can('view',$file)
+                                <td class="px-6 py-4 whitespace-nowrap"><a href="{{ route('files.show', ['file' => $file->id]) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Ver</a></td>
+                              @endcan
+                              @can('delete',$file) 
+                                <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('files.destroy', ['file' => $file->id]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"><i class="fas fa-trash"></i></button>
+                                </form>
+                                </td>
+                              @endcan
+                              @can('update',$file)
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                <a href="{{ route('files.edit', $file) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Editar</a>
+                                </tr>
+                              @endcan
                           @endforeach
                       </tbody>
                   </table>
