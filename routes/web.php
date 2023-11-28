@@ -57,4 +57,7 @@ Route::post('/posts/{post}/like', [PostController::class, 'like'])->name('posts.
 
 Route::post('/places/{place}/favs', [PlaceController::class, 'favorite'])->name('places.favorite');
 
+Route::put('/places/{place}', function (Place $place) {
+})->middleware('can:favorite,place');
+
 require __DIR__.'/auth.php';

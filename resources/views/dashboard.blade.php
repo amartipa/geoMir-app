@@ -24,7 +24,10 @@
                     <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href="{{ url('/posts') }}">{{ __('Posts') }}</a>
                     
                     <br><br>
-                    <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href="{{ url('/places') }}">{{ __('Place') }}</a>
+                    @can('viewAny',App\Models\Place::class)
+                        <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href="{{ url('/places') }}">{{ __('Place') }}</a>
+                    @endcan   
+
             </div>
         </div>
     </div>

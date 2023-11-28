@@ -44,6 +44,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $place->latitude }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $place->longitude }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
+                                    @can('favorite',$place)
                                         <form action="{{ route('places.favorite', ['place' => $place->id]) }}" method="post">
                                             @csrf
                                             <button type="submit" class="flex items-center">
@@ -55,8 +56,10 @@
                                                 <span>{{ $place->favorited_count }}</span>
                                             </button>
                                         </form>
+                                    @endcan
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap"><img class="img-fluid" src="{{ asset("storage/{$place->file->filepath}") }}" /></td>
+                                    @can('delete',$place)
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <form action="{{ route('places.destroy', ['place' => $place->id]) }}" method="post">
                                             @csrf
@@ -64,9 +67,12 @@
                                             <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"><i class="fas fa-trash"></i></button>
                                         </form>
                                     </td>
+                                    @endcan
+                                    @can('update',$place)
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <a href="{{ route('places.edit', $place) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Editar</a>
                                     </td>
+                                    @endcan
                                 </tr>
                             @endforeach
                             {{ $places->links() }}
