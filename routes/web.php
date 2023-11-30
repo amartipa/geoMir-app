@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\PlaceController;
-
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Log;
 
@@ -53,11 +53,13 @@ Route::resource('places', PlaceController::class)->middleware('auth');
 Route::resource('posts', PostController::class)->middleware('auth');
 
 Route::post('/posts/{post}/like', [PostController::class, 'like'])->name('posts.like');
-
+Route::get('/language/{locale}', [LanguageController::class,'language'])->name('language');
 
 Route::post('/places/{place}/favs', [PlaceController::class, 'favorite'])->name('places.favorite');
 
 Route::put('/places/{place}', function (Place $place) {
 })->middleware('can:favorite,place');
+
+
 
 require __DIR__.'/auth.php';
