@@ -17,10 +17,10 @@
                       <thead>
                           <tr class="border-b dark:border-neutral-500">
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</td>
-                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Body</td>
-                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">file</td>
-                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Longitude</td>
-                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Latitude</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{__('Description')}}</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{__('File')}}</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{__('Longitude')}}</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{__('Latitude')}}</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Like</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Created</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Delete</td>

@@ -42,12 +42,12 @@ class FileResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('filepath'),
-                Tables\Columns\TextColumn::make('filesize'),
+                Tables\Columns\TextColumn::make('filepath')->translateLabel(),
+                Tables\Columns\TextColumn::make('filesize')->translateLabel(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
+                    ->dateTime()->translateLabel(),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
+                    ->dateTime()->translateLabel(),
             ])
             ->filters([
                 //

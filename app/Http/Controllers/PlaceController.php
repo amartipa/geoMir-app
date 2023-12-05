@@ -98,12 +98,12 @@ class PlaceController extends Controller
             ]);
             Log::debug("DB Storage OK");
             return redirect()->route('places.show', $place)
-                ->with('success','Place creat correctament');
+                ->with('success',__('Place successfully saved'));
         } else {
             Log::debug("Disk storage FAILS");
             // Patró PRG amb missatge d'error
             return redirect()->route("places.create")
-                ->with('error', 'ERROR uploading file');
+                ->with('error', __('ERROR uploading place'));
         }
     }
 
@@ -122,7 +122,7 @@ class PlaceController extends Controller
             ]);
         } else {
             return redirect()->route("places.index")
-                ->with('error', 'ERROR: El archivo no existe');
+                ->with('error', __('ERROR missing file'));
         }; 
     }
 
@@ -180,12 +180,12 @@ class PlaceController extends Controller
 
     
         return redirect()->route('places.show', $place)
-            ->with('success', ('Place actualizado'));
+            ->with('success', __('Place successfully updated'));
     } else {
         Log::debug("Local storage FAILS");
         // Patró PRG amb missatge d'error
         return redirect()->route("places.edit")
-            ->with('error', ('ERROR: Problema al editar el place'));
+            ->with('error', __('Place successfully updated'));
     }
                       
            
@@ -199,7 +199,7 @@ class PlaceController extends Controller
         Storage::delete($place->file->filepath);
         $place->delete();
         $place->file->delete();
-        return redirect()->route("places.index")->with('success', 'Place eliminado correctamente');
+        return redirect()->route("places.index")->with('success', __('Place successfully deleted'));
     }
     // public function favorite(Request $request, Place $place)
     // {

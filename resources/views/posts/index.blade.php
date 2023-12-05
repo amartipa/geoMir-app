@@ -19,10 +19,10 @@
                       <thead>
                           <tr class="border-b dark:border-neutral-500">
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</td>
-                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Body</td>
-                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">file</td>
-                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Latitude</td>
-                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Longitude</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{__('Description')}}</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{__('Photo')}}</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{__('Latitude')}}</td>
+                              <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{__('Longitude')}}</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Like</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">view</td>
                               <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Delete</td>
@@ -57,7 +57,7 @@
                                </form> 
                                @endcan
                               @can('view',$post)                             
-                                <td class="px-6 py-4 whitespace-nowrap"><a href="{{ route('posts.show', ['post' => $post->id]) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Ver</a></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><a href="{{ route('posts.show', ['post' => $post->id]) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">{{__('View')}}</a></td>
                               @endcan
                               @can('delete',$post)
                                 <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="post">

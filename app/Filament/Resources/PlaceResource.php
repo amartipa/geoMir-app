@@ -81,16 +81,16 @@ class PlaceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('file_id'),
-                Tables\Columns\TextColumn::make('author_id'),
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('description'),
-                Tables\Columns\TextColumn::make('latitude'),
-                Tables\Columns\TextColumn::make('longitude'),
+                Tables\Columns\TextColumn::make('file_id')->translateLabel(),
+                Tables\Columns\TextColumn::make('author_id')->translateLabel(),
+                Tables\Columns\TextColumn::make('name')->translateLabel(),
+                Tables\Columns\TextColumn::make('description')->translateLabel(),
+                Tables\Columns\TextColumn::make('latitude')->translateLabel(),
+                Tables\Columns\TextColumn::make('longitude')->translateLabel(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
+                    ->dateTime()->translateLabel(),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
+                    ->dateTime()->translateLabel(),
             ])
             ->filters([
                 //

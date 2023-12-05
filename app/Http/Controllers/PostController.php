@@ -124,13 +124,13 @@ class PostController extends Controller
             ]);
             Log::debug("DB Storage OK");
             return redirect()->route('posts.show', $post)
-                ->with('success','Post creat correctament');
+                ->with('success',__('Post successfully saved'));
             
         } else {
             Log::debug("Disk storage FAILS");
             // Patró PRG amb missatge d'error
             return redirect()->route("posts.create")
-                ->with('error', 'ERROR uploading file');
+                ->with('error',__( 'ERROR uploading file'));
         }
 
 
@@ -163,7 +163,7 @@ class PostController extends Controller
         } else {
             // Redirigir si el archivo no existe
             return redirect()->route("posts.index")
-                ->with('error', 'ERROR: El post no se puede mostrar');
+                ->with('error', __('ERROR uploading post'));
         };   
     }
 
@@ -219,12 +219,12 @@ class PostController extends Controller
 
     
         return redirect()->route('posts.show', $post)
-            ->with('success', ('Post actualizado'));
+            ->with('success', __('Post successfully updated'));
     } else {
         Log::debug("Local storage FAILS");
         // Patró PRG amb missatge d'error
         return redirect()->route("posts.edit")
-            ->with('error', ('ERROR: Problema al editar el post'));
+            ->with('error', __('ERROR editing post'));
     }
                       
            
@@ -246,7 +246,7 @@ class PostController extends Controller
         $post->file->delete();
 
        
-        return redirect()->route("posts.index")->with('success', 'Post eliminado correctamente');
+        return redirect()->route("posts.index")->with('success', __('Post successfully deleted'));
     }
 
     public function like(Request $request, Post $post): RedirectResponse
