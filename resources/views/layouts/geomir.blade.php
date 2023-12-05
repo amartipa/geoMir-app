@@ -42,6 +42,7 @@
             <main>
                 @include('partials.flash')
                 @yield('content')
+                {{ $slot }}
             </main>
         </div>
     </body>

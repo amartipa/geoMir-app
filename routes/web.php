@@ -8,6 +8,12 @@ use App\Http\Controllers\FileController;
 use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutControllerIzan;
+use App\Http\Controllers\AboutControllerAdria;
+use App\Http\Controllers\AboutController;
+
+
 use Illuminate\Support\Facades\Log;
 
 /*
@@ -60,6 +66,11 @@ Route::post('/places/{place}/favs', [PlaceController::class, 'favorite'])->name(
 Route::put('/places/{place}', function (Place $place) {
 })->middleware('can:favorite,place');
 
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/about-izan', [AboutControllerIzan::class, 'about'])->name('about-izan');
+Route::get('/about-adria', [AboutControllerAdria::class, 'about'])->name('about-adria');
+Route::get('/about', [AboutController::class, 'about'])->name('about');
 
 
 require __DIR__.'/auth.php';
