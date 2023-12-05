@@ -28,14 +28,14 @@ use Illuminate\Support\Facades\Log;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/', function (Request $request) {
     $message = 'Loading welcome page';
     Log::info($message);
     $request->session()->flash('info', $message);
-    return view('welcome');
+    return view('home');
  });
 
 Route::get('/dashboard', function () {

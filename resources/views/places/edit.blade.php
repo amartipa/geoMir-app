@@ -18,9 +18,9 @@
 
         <label for="visibility_id">{{__('Visibility')}}</label><br>
         <select id="visibility_id" name="visibility_id" class="form-input w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-            <option value="1" {{$post->visibility_id == 1 ? 'selected' : ''}}>Public</option>
-            <option value="2" {{$post->visibility_id == 2 ? 'selected' : ''}}>Contacts</option>
-            <option value="2" {{$post->visibility_id == 3 ? 'selected' : ''}}>Private</option>
+            <option value="1" {{$place->visibility_id == 1 ? 'selected' : ''}}>Public</option>
+            <option value="2" {{$place->visibility_id == 2 ? 'selected' : ''}}>Contacts</option>
+            <option value="2" {{$place->visibility_id == 3 ? 'selected' : ''}}>Private</option>
            
         </select><br>
 
