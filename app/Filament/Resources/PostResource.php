@@ -6,6 +6,7 @@ use App\Filament\Resources\PostResource\Pages;
 use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Post;
 use Filament\Forms;
+use App\Models\Visibility;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -71,7 +72,14 @@ class PostResource extends Resource
                             ->required(),
                         Forms\Components\TextInput::make('longitude')
                             ->required(),
-                            ]),
+                        Forms\Components\Select::make('visibility_id')
+                            ->relationship('visibility', 'name')
+                            ->required(),
+
+                        ]),
+                        
+                            
+                       
                 ]);
          
     }
@@ -80,15 +88,16 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('file_id'),
-                Tables\Columns\TextColumn::make('author_id'),
-                Tables\Columns\TextColumn::make('body'),
-                Tables\Columns\TextColumn::make('latitude'),
-                Tables\Columns\TextColumn::make('longitude'),
+                Tables\Columns\TextColumn::make('file_id')->translateLabel(),
+                Tables\Columns\TextColumn::make('author_id')->translateLabel(),
+                Tables\Columns\TextColumn::make('body')->translateLabel(),
+                Tables\Columns\TextColumn::make('latitude')->translateLabel(),
+                Tables\Columns\TextColumn::make('longitude')->translateLabel(),
+                Tables\Columns\TextColumn::make('visibility_id')->translateLabel(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
+                    ->dateTime()->translateLabel(),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
+                    ->dateTime()->translateLabel(),
             ])
             ->filters([
                 //

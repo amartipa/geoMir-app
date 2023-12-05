@@ -15,6 +15,7 @@ class Post extends Model
         'latitude',
         'longitude',
         'author_id',
+        'visibility_id'
     ];
 
     public function file(){
@@ -28,6 +29,11 @@ class Post extends Model
     }
     public function liked(){
         return $this->belongsToMany(User::class, 'likes');
+    }
+
+    public function visibility()
+    {
+        return $this->belongsTo(visibility::class);
     }
 
 

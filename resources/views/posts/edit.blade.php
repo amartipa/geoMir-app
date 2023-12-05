@@ -4,22 +4,30 @@
     @csrf
     @method('PUT')
     
-    <label for="body">Descripción:</label><br>
+    <label for="body">{{__('Description')}}</label><br>
     <textarea id="body" name="body" rows="4" cols="50" placeholder="Ingresa tu texto aquí...">{{$post->body}}</textarea><br>
 
-    <label for="latitude">Latitud:</label><br>
+    <label for="latitude">{{__('Latitude')}}</label><br>
     <input type="number" id="latitude" name="latitude" step="0.000001" value={{$post->latitude}}><br>
 
-    <label for="longitude">Longitud:</label><br>
+    <label for="longitude">{{__('Longitude')}}</label><br>
     <input type="number" id="longitude" name="longitude" step="0.000001" value={{$post->longitude}}><br>
 
+    <label for="visibility_id">{{__('Visibility')}}</label><br>
+    <select id="visibility_id" name="visibility_id" class="form-input w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <option value="1" {{$post->visibility_id == 1 ? 'selected' : ''}}>Public</option>
+        <option value="2" {{$post->visibility_id == 2 ? 'selected' : ''}}>Contacts</option>
+        <option value="2" {{$post->visibility_id == 3 ? 'selected' : ''}}>Private</option>
+       
+    </select><br>
+
     <div class="mb-4">
-        <label for="upload" class="block text-gray-700 text-sm font-bold mb-2">File:</label>
+        <label for="upload" class="block text-gray-700 text-sm font-bold mb-2">{{__('File')}}</label>
         <input type="file" name="upload" class="form-input w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
     </div>
     
     <div class="flex justify-between">
-        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Edit</button>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">{{__('Editar')}}</button>
         
     </div>
 </form>
