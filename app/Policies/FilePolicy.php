@@ -21,7 +21,7 @@ class FilePolicy
      */
     public function view(User $user, File $file): bool
     {
-        return $user->role_id == 3;
+        return true;
     }
 
     /**

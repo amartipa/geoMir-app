@@ -78,32 +78,8 @@
         });
     </script>
 
-    <!-- Contenido de Izan -->
-    <div class="flex flex-col items-center mt-8">
-        <div class="flex items-center justify-center mb-8">
-            <div class="izan-image-container" id="izan-modal-button">
-                <img src="{{ asset('img/amadorSerio.png') }}">
-                <img src="{{ asset('img/amador.png') }}">
-            </div>
-        </div>
-
-        <div class="text-center">
-            <h3 class="text-xl font-bold mb-2">Izan Gonzalvez Aranda</h3>
-            <p class="text-gray-600">Web developer</p>
-        </div>
-    </div>
-
-    <div id="izan-video-modal" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-500 bg-opacity-75">
-        <div class="flex items-center justify-center h-full">
-            <div class="bg-white p-8 rounded shadow-md">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/U7rejTPRba0?si=1-W-6u3w5M5Ex3wB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <button id="izan-modal-close-button" class="mt-4 p-2 bg-gray-700 text-white rounded">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Estilos e scripts para Adria -->
-    <style>
+     <!-- Estilos e scripts para Adria -->
+     <style>
         .adria-image-container {
             position: relative;
             width: 25rem;
@@ -172,27 +148,53 @@
             });
         });
     </script>
+    <div class="flex flex-row items-center justify-center">
+        <!-- Contenido de Izan -->
+        <div class="flex flex-col items-center mt-8">
+            <div class="flex items-center justify-center mb-8">
+                <div class="izan-image-container" id="izan-modal-button">
+                    <img src="{{ asset('img/amadorSerio.png') }}">
+                    <img src="{{ asset('img/amador.png') }}">
+                </div>
+            </div>
 
-    <!-- Contenido de Adria -->
-    <div class="flex flex-col items-center mt-8">
-        <div class="flex items-center justify-center mb-8">
-            <div class="adria-image-container" id="adria-modal-button">
-                <img src="{{ asset('img/images.png') }}">
-                <img src="{{ asset('img/images2.png') }}">
+            <div class="text-center">
+                <h3 class="text-xl font-bold mb-2">Izan Gonzalvez Aranda</h3>
+                <p class="text-gray-600">Web developer</p>
             </div>
         </div>
 
-        <div class="text-center">
-            <h3 class="text-xl font-bold mb-2">Adria Martinez Paredes</h3>
-            <p class="text-gray-600">Web developer</p>
+        <div id="izan-video-modal" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-500 bg-opacity-75">
+            <div class="flex items-center justify-center h-full">
+                <div class="bg-white p-8 rounded shadow-md">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/U7rejTPRba0?si=1-W-6u3w5M5Ex3wB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <button id="izan-modal-close-button" class="mt-4 p-2 bg-gray-700 text-white rounded">Close</button>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div id="adria-video-modal" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-500 bg-opacity-75">
-        <div class="flex items-center justify-center h-full">
-            <div class="bg-white p-8 rounded shadow-md">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/7lQfj-_8Zg0?si=PrMwqi1XKBAHGHC_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <button id="adria-modal-close-button" class="mt-4 p-2 bg-gray-700 text-white rounded">Close</button>
+        <!-- Contenido de Adria -->
+
+        <div class="flex flex-col items-center mt-8">
+            <div class="flex items-center justify-center mb-8">
+                <div class="adria-image-container" id="adria-modal-button">
+                    <img src="{{ asset('img/images.png') }}">
+                    <img src="{{ asset('img/images2.png') }}">
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h3 class="text-xl font-bold mb-2">Adria Martinez Paredes</h3>
+                <p class="text-gray-600">Web developer</p>
+            </div>
+        </div>
+
+        <div id="adria-video-modal" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-500 bg-opacity-75">
+            <div class="flex items-center justify-center h-full">
+                <div class="bg-white p-8 rounded shadow-md">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7lQfj-_8Zg0?si=PrMwqi1XKBAHGHC_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <button id="adria-modal-close-button" class="mt-4 p-2 bg-gray-700 text-white rounded">Close</button>
+                </div>
             </div>
         </div>
     </div>

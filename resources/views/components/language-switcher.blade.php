@@ -12,6 +12,9 @@
             </x-dropdown-link>
         @endif
     @endforeach
+    <script>
+        const currentLocale = {{ Js::from($currentLocale) }};
+     </script>
     </x-slot>
  </x-dropdown>
  

@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -13,6 +14,7 @@
         <script src="https://kit.fontawesome.com/cbe6fa6a2e.js" crossorigin="anonymous"></script>
 
         <!-- Scripts -->
+        <script src="https://cdn.tailwindcss.com"></script>
         @env(['local','development'])
             @vite(['resources/css/app.css', 'resources/js/app.js'])  
         @endenv
