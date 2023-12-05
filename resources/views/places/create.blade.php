@@ -15,6 +15,14 @@
         <label for="longitude">Longitud:</label>
         <input type="number" id="longitude" name="longitude" step="any" required><br><br>
 
+        <label for="visibility_id">{{__('Visibility')}}:</label><br>
+        <select id="visibility_id" name="visibility_id" class="form-input w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <option value="1">Public</option>
+        <option value="2">Contacts</option>
+        <option value="3">Private</option>
+        
+    </select><br>
+
         <label for="upload">file:</label>
         <input type="file" id="upload" name="upload" required><br><br>
     </div>

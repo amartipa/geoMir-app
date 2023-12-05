@@ -38,40 +38,43 @@
                             </div>
                         </form>
                           @foreach ($posts as $post)
-                          <tr class="border-b dark:border-neutral-500">
-                              <td class="px-6 py-4 whitespace-nowrap">{{ $post->id }}</td>
-                              <td class="px-6 py-4 whitespace-nowrap">{{ $post->body }}</td>
-                              <td class="px-6 py-4 whitespace-nowrap"><img class="img-fluid" src='{{ asset("storage/{$post->file->filepath}") }}' /></td>
-                              <td class="px-6 py-4 whitespace-nowrap">{{ $post->latitude }}</td>
-                              <td class="px-6 py-4 whitespace-nowrap">{{ $post->longitude }}</td>
-                              @can('like',$post)
-                                <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('posts.like', ['post' => $post->id]) }}" method="post">
-                                @csrf
-                                @method('POST')
-                                    <p></p>
-                                    @if($post->isLiked)
-                                        <button type="submit"><i class="fa-solid fa-heart" style="color: #ff0000;"></i> {{$post->liked_count}}</button>
-                                    @else
-                                        <button type="submit"> <i class="fa-regular fa-heart"></i> {{$post->liked_count}}</button>
-                                    @endif
-                               </form> 
-                               @endcan
-                              @can('view',$post)                             
-                                <td class="px-6 py-4 whitespace-nowrap"><a href="{{ route('posts.show', ['post' => $post->id]) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">{{__('View')}}</a></td>
-                              @endcan
-                              @can('delete',$post)
-                                <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"><i class="fas fa-trash"></i></button>
-                                </form>
-                                </td>
-                            @endcan
-                            @can('update',$post)
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                <a href="{{ route('posts.edit', $post) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Editar</a>
-                                </tr>
-                            @endcan
+                          @if($post->visibility_id == 1 || ($post->visibility_id == 3 && $post->user->is(auth()->user())))
+
+                            <tr class="border-b dark:border-neutral-500">
+                                <td class="px-6 py-4 whitespace-nowrap">{{ $post->id }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{ $post->body }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap"><img class="img-fluid" src='{{ asset("storage/{$post->file->filepath}") }}' /></td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{ $post->latitude }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{ $post->longitude }}</td>
+                                @can('like',$post)
+                                    <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('posts.like', ['post' => $post->id]) }}" method="post">
+                                    @csrf
+                                    @method('POST')
+                                        <p></p>
+                                        @if($post->isLiked)
+                                            <button type="submit"><i class="fa-solid fa-heart" style="color: #ff0000;"></i> {{$post->liked_count}}</button>
+                                        @else
+                                            <button type="submit"> <i class="fa-regular fa-heart"></i> {{$post->liked_count}}</button>
+                                        @endif
+                                </form> 
+                                @endcan
+                                @can('view',$post)                             
+                                    <td class="px-6 py-4 whitespace-nowrap"><a href="{{ route('posts.show', ['post' => $post->id]) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">{{__('View')}}</a></td>
+                                @endcan
+                                @can('delete',$post)
+                                    <td class="px-6 py-4 whitespace-nowrap"><form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                    </td>
+                                @endcan
+                                @can('update',$post)
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                    <a href="{{ route('posts.edit', $post) }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Editar</a>
+                                    </tr>
+                                @endcan
+                            @endif
                           @endforeach
                           {{$posts->links()}}
                       </tbody>

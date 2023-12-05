@@ -37,6 +37,7 @@
                                 </div>
                             </form>
                             @foreach ($places as $place)
+                                @if($place->visibility_id == 1 || ($place->visibility_id == 3 && $place->user->is(auth()->user())))
                                 <tr class="border-b dark:border-neutral-500">
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $place->id }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $place->name }}</td>
@@ -74,6 +75,7 @@
                                     </td>
                                     @endcan
                                 </tr>
+                            @endif
                             @endforeach
                             {{ $places->links() }}
                         </tbody>

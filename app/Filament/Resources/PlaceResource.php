@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\PlaceResource\Pages;
 use App\Filament\Resources\PlaceResource\RelationManagers;
 use App\Models\Place;
+use App\Models\Visibility;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -73,6 +74,12 @@ class PlaceResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('longitude')
                     ->required(),
+                
+                Forms\Components\Select::make('visibility_id')
+                    ->relationship('visibility', 'name')
+                    ->required(),
+                   
+ 
             
             ]);
     }
@@ -87,6 +94,7 @@ class PlaceResource extends Resource
                 Tables\Columns\TextColumn::make('description')->translateLabel(),
                 Tables\Columns\TextColumn::make('latitude')->translateLabel(),
                 Tables\Columns\TextColumn::make('longitude')->translateLabel(),
+                Tables\Columns\TextColumn::make('visibility_id')->translateLabel(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()->translateLabel(),
                 Tables\Columns\TextColumn::make('updated_at')

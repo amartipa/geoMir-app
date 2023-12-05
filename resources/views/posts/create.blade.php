@@ -12,6 +12,15 @@
     <label for="longitude">{{__('Longitude')}}:</label><br>
     <input type="number" id="longitude" name="longitude" step="0.000001" placeholder="Ejemplo: -58.381592"><br>
 
+    <label for="visibility_id">{{__('Visibility')}}:</label><br>
+    <select id="visibility_id" name="visibility_id" class="form-input w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <option value="1">Public</option>
+        <option value="2">Contacts</option>
+        <option value="3">Private</option>
+        
+    </select><br>
+    
+
     <div class="mb-4">
         <label for="upload" class="block text-gray-700 text-sm font-bold mb-2">{{__('File')}}:</label>
         <input type="file" name="upload" class="form-input w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />

@@ -94,6 +94,7 @@ class PlaceController extends Controller
                 'file_id' =>$file->id,
                 'latitude' =>$request->latitude,
                 'longitude' =>$request->longitude,
+                'visibility_id'=>$request->visibility_id,
                 'author_id' =>auth()->user()->id,
             ]);
             Log::debug("DB Storage OK");
@@ -176,6 +177,7 @@ class PlaceController extends Controller
         $place->description = $request->description;
         $place->longitude = $request->longitude;
         $place->latitude = $request->latitude;
+
         $place->save();
 
     
