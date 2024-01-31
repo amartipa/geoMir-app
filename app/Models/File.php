@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class File extends Model
 {
@@ -22,6 +25,47 @@ class File extends Model
     public function place()
     {
     return $this->hasOne(Place::class);
+    }
+    public function diskSave(UploadedFile $upload)
+    {
+        $fileName = $upload->getClientOriginalName();
+        $fileSize = $upload->getSize();
+        Log::debug("Storing file '{$fileName}' ($fileSize)...");
+        
+        // Store file at disk
+        $uploadName = time() . '_' . $fileName;
+        $filePath = $upload->storeAs(
+            'uploads',      // Path
+            $uploadName ,   // Filename
+            'public'        // Disk
+        );
+        
+        $stored = Storage::disk('public')->exists($filePath);
+
+        if ($stored) {
+            Log::debug("Disk storage OK");
+            $fullPath = Storage::disk('public')->path($filePath);
+            Log::debug("File saved at {$fullPath}");
+            // Update model properties
+            $this->filepath = $filePath;
+            $this->filesize = $fileSize;
+            $this->save();
+            Log::debug("DB storage OK");
+            return true;
+        } else {
+            Log::debug("Disk storage FAILS");
+            return false;
+        }
+    }
+
+    public function diskDelete()
+    {
+        Log::debug("Deleting file '{$this->id}'...");
+        Storage::disk('public')->delete($this->filepath);
+        Log::debug("Disk storage OK");
+        $this->delete();
+        Log::debug("DB storage OK");
+        return true;
     }
 
 }
