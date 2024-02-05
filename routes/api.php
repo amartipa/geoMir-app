@@ -20,7 +20,7 @@ Route::post('files/{file}', [FileController::class, 'update_workaround']);
 
 //token routes
 Route::get('user', [TokenController::class, 'user'])->middleware('auth:sanctum');
-Route::post('register', [TokenController::class, 'register']);
-Route::post('login', [TokenController::class, 'login']);
+Route::post('register', [TokenController::class, 'register'])->middleware('guest');
+Route::post('login', [TokenController::class, 'login'])->middleware('guest');
 Route::post('logout', [TokenController::class, 'logout'])->middleware('auth:sanctum');
 
