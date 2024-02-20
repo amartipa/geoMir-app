@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\FileController;
 use App\Http\Controllers\Api\TokenController;
+use App\Http\Controllers\Api\PostController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,6 +18,11 @@ use App\Http\Controllers\Api\TokenController;
 */
 Route::apiResource('files', FileController::class);
 Route::post('files/{file}', [FileController::class, 'update_workaround']);
+
+//post routes
+Route::apiResource('posts', PostController::class)->middleware('auth:sanctum');
+Route::post('posts/{post}/likes', [PostController::class, 'like'])->middleware('auth:sanctum');
+Route::post('posts/{posts}', [PostController::class, 'update_workaround'])->middleware('auth:sanctum');;
 
 //token routes
 Route::get('user', [TokenController::class, 'user'])->middleware('auth:sanctum');

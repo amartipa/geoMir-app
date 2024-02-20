@@ -33,7 +33,7 @@ class Post extends Model
 
     public function visibility()
     {
-        return $this->belongsTo(visibility::class);
+        return $this->belongsTo(Visibility::class);
     }
 
 
