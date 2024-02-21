@@ -60,10 +60,6 @@ Route::get('mail/test', [MailController::class, 'test']);
 Route::resource('files', FileController::class)->middleware('auth');
 Route::resource('places', PlaceController::class)->middleware('auth');
 Route::resource('posts', PostController::class)->middleware('auth');
-Route::prefix('posts')->group(function () {
-    Route::post('{post}/comments', [CommentController::class, 'store'])->name('posts.comments.store');
-});
-
 
 Route::post('/posts/{post}/like', [PostController::class, 'like'])->name('posts.like');
 Route::get('/language/{locale}', [LanguageController::class,'language'])->name('language');
