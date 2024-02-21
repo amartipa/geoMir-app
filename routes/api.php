@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\FileController;
 use App\Http\Controllers\Api\TokenController;
+use App\Http\Controllers\Api\PlaceController;
+use App\Http\Controllers\Api\ReviewsController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,4 +27,12 @@ Route::get('user', [TokenController::class, 'user'])->middleware('auth:sanctum')
 Route::post('register', [TokenController::class, 'register'])->middleware('guest');
 Route::post('login', [TokenController::class, 'login'])->middleware('guest');
 Route::post('logout', [TokenController::class, 'logout'])->middleware('auth:sanctum');
+
+Route::apiResource('places', PlaceController::class)->middleware('auth:sanctum');
+Route::post('places/{place}/favorites', [PlaceController::class, 'favorite'])->middleware('auth:sanctum');
+Route::delete('places/{place}/favorites', [PlaceController::class, 'favorite'])->middleware('auth:sanctum');
+Route::post('places/{place}', [PlaceController::class, 'update_workaround']);
+
+Route::post('places/{place}/reviews', [ReviewsController::class, 'review'])->middleware('auth:sanctum');
+Route::delete('places/{place}/unreviews', [ReviewsController::class, 'unreview'])->middleware('auth:sanctum');
 

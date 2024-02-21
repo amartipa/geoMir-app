@@ -12,6 +12,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutControllerIzan;
 use App\Http\Controllers\AboutControllerAdria;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ReviewsController;
+
 
 
 use Illuminate\Support\Facades\Log;
@@ -72,5 +74,7 @@ Route::get('/about-izan', [AboutControllerIzan::class, 'about'])->name('about-iz
 Route::get('/about-adria', [AboutControllerAdria::class, 'about'])->name('about-adria');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 
+Route::post('/reviews', [ReviewsController::class, 'store'])->name('reviews.store');
+Route::delete('/reviews/{review}', [ReviewsController::class, 'destroy'])->name('reviews.destroy');
 
 require __DIR__.'/auth.php';
