@@ -51,7 +51,7 @@
                     </table>
                 </div>
                 <hr class="my-8">
-            <h3 class="text-lg font-semibold mb-4">Comments</h3>
+            <h3 class="text-lg font-semibold mb-4">Comments:</h3>
             <form action="{{ route('comments.store') }}" method="POST" class="mb-4">
                 @csrf
                 <input type="hidden" name="post_id" value="{{ $post->id }}">
