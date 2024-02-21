@@ -153,11 +153,14 @@ class PostController extends Controller
     // }
     public function show(Post $post)
     {
+        // Cargar los comentarios relacionados con el post
+        $post->load('comments');
+    
         // Primero, verificar si el archivo asociado al post existe
         if (Storage::disk('public')->exists($post->file->filepath)) {
             // Cargar el conteo de 'likes' para el post
             $post->loadCount('liked');
-
+    
             return view("posts.show", [
                 "post" => $post
             ]);
@@ -165,7 +168,7 @@ class PostController extends Controller
             // Redirigir si el archivo no existe
             return redirect()->route("posts.index")
                 ->with('error', __('ERROR uploading post'));
-        };   
+        }
     }
 
     /**

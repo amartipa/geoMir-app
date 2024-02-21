@@ -12,6 +12,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutControllerIzan;
 use App\Http\Controllers\AboutControllerAdria;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CommentController;
 
 
 use Illuminate\Support\Facades\Log;
@@ -57,6 +58,10 @@ Route::get('mail/test', [MailController::class, 'test']);
 Route::resource('files', FileController::class)->middleware('auth');
 Route::resource('places', PlaceController::class)->middleware('auth');
 Route::resource('posts', PostController::class)->middleware('auth');
+Route::prefix('posts')->group(function () {
+    Route::post('{post}/comments', [CommentController::class, 'store'])->name('posts.comments.store');
+});
+
 
 Route::post('/posts/{post}/like', [PostController::class, 'like'])->name('posts.like');
 Route::get('/language/{locale}', [LanguageController::class,'language'])->name('language');
@@ -71,6 +76,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/about-izan', [AboutControllerIzan::class, 'about'])->name('about-izan');
 Route::get('/about-adria', [AboutControllerAdria::class, 'about'])->name('about-adria');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
+
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
 
 require __DIR__.'/auth.php';
