@@ -131,7 +131,7 @@
             });
 
             adriaImageContainer.addEventListener('mouseleave', function () {
-                adriaAudioElement.pause();
+                 adriaAudioElement.pause();
                 adriaAudioElement.currentTime = 0;
             });
 

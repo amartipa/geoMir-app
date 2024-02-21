@@ -13,6 +13,8 @@ use App\Http\Controllers\AboutControllerIzan;
 use App\Http\Controllers\AboutControllerAdria;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ReviewsController;
+
 
 
 use Illuminate\Support\Facades\Log;
@@ -80,5 +82,10 @@ Route::get('/about', [AboutController::class, 'about'])->name('about');
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+
+Route::post('/reviews', [ReviewsController::class, 'store'])->name('reviews.store');
+Route::delete('/reviews/{review}', [ReviewsController::class, 'destroy'])->name('reviews.destroy');
 
 require __DIR__.'/auth.php';
