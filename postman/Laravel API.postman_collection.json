@@ -1,0 +1,2937 @@
+{
+	"info": {
+		"_postman_id": "5b6695e9-350f-4cf6-8f81-bd3e1e789135",
+		"name": "Laravel API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32449867",
+		"_collection_link": "https://martian-crescent-116986.postman.co/workspace/projecte-m7~94427e29-ecc6-4e2f-a9e5-1a76f79699bd/collection/32449867-5b6695e9-350f-4cf6-8f81-bd3e1e789135?action=share&source=collection_link&creator=32449867"
+	},
+	"item": [
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "List files",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "upload\n",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/files",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"files"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List files",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/files",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"files"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 16:41:44 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 16:41:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xd7d7442da692c3b7e0c9161e3908f922"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"filepath\": \"uploads/1701790776_Captura de pantalla 2023-02-10 181408.png\",\n            \"filesize\": 111048,\n            \"created_at\": \"2023-12-05T15:39:36.000000Z\",\n            \"updated_at\": \"2023-12-05T15:39:36.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"filepath\": \"uploads/1701791307_Captura de pantalla 2023-02-10 181509.png\",\n            \"filesize\": 33958,\n            \"created_at\": \"2023-12-05T15:48:27.000000Z\",\n            \"updated_at\": \"2023-12-05T15:48:27.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"filepath\": \"uploads/1701792272_Captura de pantalla 2023-02-10 181450.png\",\n            \"filesize\": 31218,\n            \"created_at\": \"2023-12-05T16:04:32.000000Z\",\n            \"updated_at\": \"2023-12-05T16:04:32.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"filepath\": \"uploads/1701792414_Captura de pantalla 2023-02-10 181509.png\",\n            \"filesize\": 33958,\n            \"created_at\": \"2023-12-05T16:06:54.000000Z\",\n            \"updated_at\": \"2023-12-05T16:06:54.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"filepath\": \"uploads/1701793574_Captura de pantalla 2023-02-10 181450.png\",\n            \"filesize\": 31218,\n            \"created_at\": \"2023-12-05T16:26:14.000000Z\",\n            \"updated_at\": \"2023-12-05T16:26:14.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"filepath\": \"uploads/1701794886_Captura de pantalla 2023-02-10 181509.png\",\n            \"filesize\": 33958,\n            \"created_at\": \"2023-12-05T16:48:06.000000Z\",\n            \"updated_at\": \"2023-12-05T16:48:06.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"filepath\": \"uploads/1701799438_2920072.png\",\n            \"filesize\": 46693,\n            \"created_at\": \"2023-12-05T18:03:58.000000Z\",\n            \"updated_at\": \"2023-12-05T18:03:58.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"filepath\": \"uploads/1701800264_2920072.png\",\n            \"filesize\": 46693,\n            \"created_at\": \"2023-12-05T18:17:44.000000Z\",\n            \"updated_at\": \"2023-12-05T18:17:44.000000Z\"\n        },\n        {\n            \"id\": 11,\n            \"filepath\": \"uploads/1701800811_2920072.png\",\n            \"filesize\": 46693,\n            \"created_at\": \"2023-12-05T18:26:51.000000Z\",\n            \"updated_at\": \"2023-12-05T18:26:51.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"filepath\": \"uploads/1701803860_Captura de pantalla 2023-02-10 181408.png\",\n            \"filesize\": 111048,\n            \"created_at\": \"2023-12-05T19:17:40.000000Z\",\n            \"updated_at\": \"2023-12-05T19:17:40.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"filepath\": \"uploads/1701804929_Captura de pantalla 2023-02-10 181550.png\",\n            \"filesize\": 27285,\n            \"created_at\": \"2023-12-05T19:35:29.000000Z\",\n            \"updated_at\": \"2023-12-05T19:35:29.000000Z\"\n        },\n        {\n            \"id\": 15,\n            \"filepath\": \"uploads/1706624739_camiseta_niño_portada.jpg\",\n            \"filesize\": 25443,\n            \"created_at\": \"2024-01-30T14:25:39.000000Z\",\n            \"updated_at\": \"2024-01-30T14:25:39.000000Z\"\n        },\n        {\n            \"id\": 16,\n            \"filepath\": \"uploads/1706627341_2920072.png\",\n            \"filesize\": 46693,\n            \"created_at\": \"2024-01-30T15:09:01.000000Z\",\n            \"updated_at\": \"2024-01-30T15:09:01.000000Z\"\n        },\n        {\n            \"id\": 18,\n            \"filepath\": \"uploads/1706640153_avatar.png\",\n            \"filesize\": 512000,\n            \"created_at\": \"2024-01-30T18:42:33.000000Z\",\n            \"updated_at\": \"2024-01-30T18:42:33.000000Z\"\n        },\n        {\n            \"id\": 19,\n            \"filepath\": \"uploads/1706640171_avatar.png\",\n            \"filesize\": 512000,\n            \"created_at\": \"2024-01-30T18:42:51.000000Z\",\n            \"updated_at\": \"2024-01-30T18:42:51.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create files",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "upload\n",
+									"type": "file",
+									"src": "postman-cloud:///1eec0599-12ea-4680-95fa-dfa7b83b7992"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/files",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"files"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create files",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "upload\n",
+											"type": "file",
+											"src": "postman-cloud:///1eec0599-12ea-4680-95fa-dfa7b83b7992"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/files",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"files"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 16:56:10 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 16:56:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X3d4e3e5b3bb779b3ff4b6a54a8f21240"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"filepath\": \"uploads/1706720170_camisera_algodon_blanca.jpg\",\n        \"filesize\": 16772,\n        \"updated_at\": \"2024-01-31T16:56:10.000000Z\",\n        \"created_at\": \"2024-01-31T16:56:10.000000Z\",\n        \"id\": 27\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update files",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "upload",
+									"type": "file",
+									"src": "postman-cloud:///1eec0599-12ea-4680-95fa-dfa7b83b7992"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/files/{{id}}",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"files",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update files",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "upload",
+											"type": "file",
+											"src": "postman-cloud:///1eec0599-12ea-4680-95fa-dfa7b83b7992"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/files/{{id}}",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"files",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 18:52:05 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 18:52:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"filepath\": \"uploads/1706727125_camisera_algodon_blanca.jpg\",\n        \"filesize\": 16772,\n        \"created_at\": \"2024-01-31T18:52:05.000000Z\",\n        \"updated_at\": \"2024-01-31T18:52:05.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show files",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/files/{{id}}",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"files",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show files",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/files/{{id}}",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"files",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 18:57:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 18:57:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X20de1611b52617c9cbbcc92433862e0d"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"filepath\": \"uploads/1706727125_camisera_algodon_blanca.jpg\",\n        \"filesize\": 16772,\n        \"created_at\": \"2024-01-31T18:52:05.000000Z\",\n        \"updated_at\": \"2024-01-31T18:52:05.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete files",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/files/{{id}}",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"files",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete files",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/files/{{id}}",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"files",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 18:59:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 18:59:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X256abeb24e80610fc4939f124bbde295"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 28,\n        \"filepath\": \"uploads/1706727053_camisera_algodon_blanca.jpg\",\n        \"filesize\": 16772,\n        \"created_at\": \"2024-01-31T18:50:53.000000Z\",\n        \"updated_at\": \"2024-01-31T18:50:53.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Token",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/login?email=izan@gmail.com&password=izan1234",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "izan@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "izan1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|bvlwOEhvEm0Tn9vOEMDhrWZLA3s4hOY8QMKScEHna3f323e7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/user",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"pruebaveinte\",\r\n    \"email\" : \"pruebaveinte@pruebaveinte.com\",\r\n    \"password\" : \"pruebaveinte\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/register",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "{{URL_ENDPOINT}}/api/register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"pruebaveinte\",\r\n    \"email\" : \"pruebaveinte@pruebaveinte.com\",\r\n    \"password\" : \"pruebaveinte\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/register",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Feb 2024 17:53:11 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Feb 2024 17:53:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X4f91681b28ca76383e777ac6152ba685"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"user\": {\n        \"name\": \"pruebaveinte\",\n        \"email\": \"pruebaveinte@pruebaveinte.com\",\n        \"role_id\": 1,\n        \"updated_at\": \"2024-02-05T17:53:10.000000Z\",\n        \"created_at\": \"2024-02-05T17:53:10.000000Z\",\n        \"id\": 18\n    },\n    \"authToken\": \"26|rvGfgzp9Ziif8dsXU8Bly9mGzheDvqBcOlR2Vs262620c2ff\",\n    \"tokenType\": \"Bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "27|StwEAVlYvHLPffunbGgYalR51PJBtRNgv1qZwXqe65c603e7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/logout",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "List Posts",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/posts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/posts",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:32:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:32:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xbf10e69e1a47fcc8db5bbaf0f1db3661"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"body\": \"eregwregwr\",\n            \"file_id\": 4,\n            \"latitude\": 453,\n            \"longitude\": 424,\n            \"author_id\": 1,\n            \"created_at\": \"2024-02-19T18:15:57.000000Z\",\n            \"updated_at\": \"2024-02-19T18:15:57.000000Z\",\n            \"visibility_id\": 1\n        },\n        {\n            \"id\": 2,\n            \"body\": \"post 3\",\n            \"file_id\": 5,\n            \"latitude\": 56456,\n            \"longitude\": 4565,\n            \"author_id\": 1,\n            \"created_at\": \"2024-02-19T18:16:33.000000Z\",\n            \"updated_at\": \"2024-02-19T18:16:33.000000Z\",\n            \"visibility_id\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create post",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "upload",
+									"type": "file",
+									"src": "postman-cloud:///1eec0599-12ea-4680-95fa-dfa7b83b7992"
+								},
+								{
+									"key": "body",
+									"value": "texto de prueba",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "300",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/posts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "upload",
+											"type": "file",
+											"src": "postman-cloud:///1eec0599-12ea-4680-95fa-dfa7b83b7992"
+										},
+										{
+											"key": "body",
+											"value": "texto de prueba",
+											"type": "text"
+										},
+										{
+											"key": "latitude",
+											"value": "300",
+											"type": "text"
+										},
+										{
+											"key": "longitude",
+											"value": "200",
+											"type": "text"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/posts",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:36:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:36:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xb56d3e158e2b1ceb783d95ffcfdc9f8b"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"body\": \"texto de prueba\",\n        \"file_id\": 11,\n        \"latitude\": \"300\",\n        \"longitude\": \"200\",\n        \"visibility_id\": 1,\n        \"author_id\": 1,\n        \"updated_at\": \"2024-02-19T18:36:28.000000Z\",\n        \"created_at\": \"2024-02-19T18:36:28.000000Z\",\n        \"id\": 3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update posts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "upload",
+									"type": "file",
+									"src": "postman-cloud:///1eec0599-12ea-4680-95fa-dfa7b83b7992"
+								},
+								{
+									"key": "body",
+									"value": "updated",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "150",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/posts/{{id}}",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update posts",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "upload",
+											"type": "file",
+											"src": "postman-cloud:///1eec0599-12ea-4680-95fa-dfa7b83b7992"
+										},
+										{
+											"key": "body",
+											"value": "updated",
+											"type": "text"
+										},
+										{
+											"key": "latitude",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "longitude",
+											"value": "150",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/posts/{{id}}",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:43:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:43:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"body\": \"updated\",\n        \"file_id\": 5,\n        \"latitude\": \"100\",\n        \"longitude\": \"150\",\n        \"author_id\": 1,\n        \"created_at\": \"2024-02-19T18:16:33.000000Z\",\n        \"updated_at\": \"2024-02-19T18:43:38.000000Z\",\n        \"visibility_id\": 1,\n        \"file\": {\n            \"id\": 5,\n            \"filepath\": \"uploads/1708368218_camisera_algodon_blanca.jpg\",\n            \"filesize\": 16772,\n            \"created_at\": \"2024-02-19T18:16:33.000000Z\",\n            \"updated_at\": \"2024-02-19T18:43:38.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show posts",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/posts/{{id}}",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/posts/{{id}}",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:46:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:46:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xc037f80e245e9c4f69e699681ab43c72"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"body\": \"updated\",\n        \"file_id\": 5,\n        \"latitude\": 100,\n        \"longitude\": 150,\n        \"author_id\": 1,\n        \"created_at\": \"2024-02-19T18:16:33.000000Z\",\n        \"updated_at\": \"2024-02-19T18:43:38.000000Z\",\n        \"visibility_id\": 1,\n        \"liked_count\": 0,\n        \"file\": {\n            \"id\": 5,\n            \"filepath\": \"uploads/1708368218_camisera_algodon_blanca.jpg\",\n            \"filesize\": 16772,\n            \"created_at\": \"2024-02-19T18:16:33.000000Z\",\n            \"updated_at\": \"2024-02-19T18:43:38.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete posts",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/posts/{{id}}",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete posts",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/posts/{{id}}",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:49:05 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Feb 2024 18:49:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X64562bb1a6bef453254d9720397833b1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"body\": \"updated\",\n        \"file_id\": 5,\n        \"latitude\": 100,\n        \"longitude\": 150,\n        \"author_id\": 1,\n        \"created_at\": \"2024-02-19T18:16:33.000000Z\",\n        \"updated_at\": \"2024-02-19T18:43:38.000000Z\",\n        \"visibility_id\": 1,\n        \"file\": {\n            \"id\": 5,\n            \"filepath\": \"uploads/1708368218_camisera_algodon_blanca.jpg\",\n            \"filesize\": 16772,\n            \"created_at\": \"2024-02-19T18:16:33.000000Z\",\n            \"updated_at\": \"2024-02-19T18:43:38.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create/delete Like",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|iy327yTeZs938vdNjFCRgEVzl431W2I6wgDRNXPhfbe25506",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/posts/1/likes",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"1",
+								"likes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create/delete Like",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/posts/1/likes",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										"1",
+										"likes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 15:22:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 15:22:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "54"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xd75d5b68b66af4b2188911a18758fabd"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"liked\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create comment",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|63tO1dHanRHvtdwN3x8sNzhHXELHjt1t5Bg2P4Iw6069aeb6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "esto es un comentario",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/posts/1/comments",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "message",
+											"value": "esto es un comentario",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/posts/1/comments",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										"1",
+										"comments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 16:43:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 16:43:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X20280ecd19b0540c0bc94d3860c9996e"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"user_id\": 1,\n        \"post_id\": \"1\",\n        \"message\": \"esto es un comentario\",\n        \"updated_at\": \"2024-02-21T16:43:17.000000Z\",\n        \"created_at\": \"2024-02-21T16:43:17.000000Z\",\n        \"id\": 4\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete comment",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|I0tsphbmQODuEpENmThivdI4sI9PpNyua1nB9tMJ206a5314",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "esto es un comentario",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/posts/1/uncomment",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"1",
+								"uncomment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete comment",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "message",
+											"value": "esto es un comentario",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/posts/1/uncomment",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										"1",
+										"uncomment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 16:45:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 16:45:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X6e60db98d993759225c0b80b6bfa7dbf"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"user_id\": 1,\n        \"post_id\": 1,\n        \"message\": \"esto es un comentario carreado por izan\",\n        \"created_at\": \"2024-02-21T16:24:59.000000Z\",\n        \"updated_at\": \"2024-02-21T16:24:59.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Places",
+			"item": [
+				{
+					"name": "List Places",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/places",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"places"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Places",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/places",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"places"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 15:23:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 15:23:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xa19888fe5e7f6386583afba185f0491b"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"aaaa\",\n            \"description\": \"sdsd\",\n            \"file_id\": 30,\n            \"latitude\": 1,\n            \"longitude\": 12,\n            \"author_id\": 23,\n            \"created_at\": \"2024-02-20T15:23:33.000000Z\",\n            \"updated_at\": \"2024-02-20T15:23:33.000000Z\",\n            \"visibility_id\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create place",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "upload",
+									"type": "file",
+									"src": "postman-cloud:///1eec0599-12ea-4680-95fa-dfa7b83b7992"
+								},
+								{
+									"key": "name",
+									"value": "prueban",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "probando funcionamiento",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/places",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"places"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create place",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "upload",
+											"type": "file",
+											"src": "postman-cloud:///1eec0599-12ea-4680-95fa-dfa7b83b7992"
+										},
+										{
+											"key": "name",
+											"value": "prueban",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "probando funcionamiento",
+											"type": "text"
+										},
+										{
+											"key": "latitude",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "longitude",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/places",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"places"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 15:33:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 15:33:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xdfb663f8f85357a5874f9d243d5fff6b"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"name\": \"prueban\",\n        \"description\": \"probando funcionamiento\",\n        \"file_id\": 33,\n        \"latitude\": \"4\",\n        \"longitude\": \"3\",\n        \"visibility_id\": 1,\n        \"author_id\": 1,\n        \"updated_at\": \"2024-02-20T15:33:19.000000Z\",\n        \"created_at\": \"2024-02-20T15:33:19.000000Z\",\n        \"id\": 5\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update places",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "upload",
+									"type": "file",
+									"src": "postman-cloud:///1eec0599-12ea-4680-95fa-dfa7b83b7992"
+								},
+								{
+									"key": "name",
+									"value": "update",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "update",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/places/5",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"places",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update places",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "upload",
+											"type": "file",
+											"src": "postman-cloud:///1eec0599-12ea-4680-95fa-dfa7b83b7992"
+										},
+										{
+											"key": "name",
+											"value": "update",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "update",
+											"type": "text"
+										},
+										{
+											"key": "latitude",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "longitude",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/places/5",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"places",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 15:41:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 15:41:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 5,\n        \"name\": \"update\",\n        \"description\": \"update\",\n        \"file_id\": 33,\n        \"latitude\": \"1\",\n        \"longitude\": \"5\",\n        \"author_id\": 1,\n        \"created_at\": \"2024-02-20T15:33:19.000000Z\",\n        \"updated_at\": \"2024-02-20T15:41:16.000000Z\",\n        \"visibility_id\": 1,\n        \"file\": {\n            \"id\": 33,\n            \"filepath\": \"uploads/1708443676_camisera_algodon_blanca.jpg\",\n            \"filesize\": 16772,\n            \"created_at\": \"2024-02-20T15:33:18.000000Z\",\n            \"updated_at\": \"2024-02-20T15:41:16.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show places",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/places/{{id}}",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"places",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/places/{{id}}",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"places",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 15:43:04 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 15:43:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xc7846b50c846fc91fe255445a78f9309"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"aaaa\",\n        \"description\": \"sdsd\",\n        \"file_id\": 30,\n        \"latitude\": 1,\n        \"longitude\": 12,\n        \"author_id\": 23,\n        \"created_at\": \"2024-02-20T15:23:33.000000Z\",\n        \"updated_at\": \"2024-02-20T15:23:33.000000Z\",\n        \"visibility_id\": 1,\n        \"favorited_count\": 0,\n        \"file\": {\n            \"id\": 30,\n            \"filepath\": \"uploads/1708443380_camisera_algodon_blanca.jpg\",\n            \"filesize\": 16772,\n            \"created_at\": \"2024-02-20T15:23:33.000000Z\",\n            \"updated_at\": \"2024-02-20T15:36:20.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete places",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/places/{{id}}",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"places",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/places/{{id}}",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"places",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 15:44:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 15:44:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X66110e50a416fb5b04be89647ddb11e5"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"aaaa\",\n        \"description\": \"sdsd\",\n        \"file_id\": 30,\n        \"latitude\": 1,\n        \"longitude\": 12,\n        \"author_id\": 23,\n        \"created_at\": \"2024-02-20T15:23:33.000000Z\",\n        \"updated_at\": \"2024-02-20T15:23:33.000000Z\",\n        \"visibility_id\": 1,\n        \"file\": {\n            \"id\": 30,\n            \"filepath\": \"uploads/1708443380_camisera_algodon_blanca.jpg\",\n            \"filesize\": 16772,\n            \"created_at\": \"2024-02-20T15:23:33.000000Z\",\n            \"updated_at\": \"2024-02-20T15:36:20.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Favorite",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|qFZmsGCdwMHGOaTJ7efP1jAPboIu1ef14FqYP3KF22db6629",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/places/1/favorites",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"places",
+								"1",
+								"favorites"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/places/4/favorites",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"places",
+										"4",
+										"favorites"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 18:33:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 18:33:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X36bfc632bf53b7209d0c2807ddd46c49"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"favorited\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create review",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|bvlwOEhvEm0Tn9vOEMDhrWZLA3s4hOY8QMKScEHna3f323e7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "esto es una review",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/places/1/reviews",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"places",
+								"1",
+								"reviews"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "message",
+											"value": "esto es una review",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/places/5/reviews",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"places",
+										"5",
+										"reviews"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 20:05:32 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 20:05:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X51e225c1ae1eaa654395f852d1fd4c6e"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"user_id\": 4,\n        \"place_id\": \"5\",\n        \"message\": \"esto es una review\",\n        \"updated_at\": \"2024-02-20T20:05:32.000000Z\",\n        \"created_at\": \"2024-02-20T20:05:32.000000Z\",\n        \"id\": 8\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Review",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|bvlwOEhvEm0Tn9vOEMDhrWZLA3s4hOY8QMKScEHna3f323e7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "esto es una review",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_ENDPOINT}}/api/places/1/unreviews",
+							"host": [
+								"{{URL_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"places",
+								"1",
+								"unreviews"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Review",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "message",
+											"value": "esto es una review",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL_ENDPOINT}}/api/places/5/unreviews",
+									"host": [
+										"{{URL_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"places",
+										"5",
+										"unreviews"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 15:02:51 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 15:02:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xcaa88659522106266ceccd437a841bee"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"user_id\": 4,\n        \"place_id\": 5,\n        \"message\": \"esto es una review\",\n        \"created_at\": \"2024-02-20T19:46:42.000000Z\",\n        \"updated_at\": \"2024-02-20T19:46:42.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "2",
+			"type": "string"
+		},
+		{
+			"key": "authToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
